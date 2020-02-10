@@ -1,23 +1,28 @@
 <p>dinolist works!</p>
-<table>
-  <thead>
-  <td>
-    Species
-  </td>
-  <td>
-    Base Level
-  </td>
-  <td>
-    Base Melee
-  </td>
-  <td>
-    Base HP
-  </td>
-  </thead>
-  <tbody>
-  <td>
+<table mat-table [dataSource]="dinoList">
+  
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let dino"> {{dino.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="species">
+    <th mat-header-cell *matHeaderCellDef> Species </th>
+    <td mat-cell *matCellDef="let dino"> {{dino.species}} </td>
+  </ng-container>
+  <ng-container matColumnDef="base_level">
+    <th mat-header-cell *matHeaderCellDef> Base Level </th>
+    <td mat-cell *matCellDef="let dino"> {{dino.base_level}} </td>
+  </ng-container>
+  <ng-container matColumnDef="base_healthpoints">
+    <th mat-header-cell *matHeaderCellDef> Base Health Points </th>
+    <td mat-cell *matCellDef="let dino"> {{dino.base_healthpoints}} </td>
+  </ng-container>
+  <ng-container matColumnDef="base_melee">
+    <th mat-header-cell *matHeaderCellDef> Base Melee </th>
+    <td mat-cell *matCellDef="let dino"> {{dino.base_melee}} </td>
+  </ng-container>
 
-  </td>
-  </tbody>
-  <tfoot></tfoot>
+  
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>
