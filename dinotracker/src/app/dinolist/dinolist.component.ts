@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { Dino } from "./dino.interface";
+import { Dino } from './dino.interface';
 @Component({
   selector: 'app-dinolist',
   templateUrl: './dinolist.component.html',
