@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DinolistComponent } from './dinolist/dinolist.component';
 import { MatTableModule } from '@angular/material/table';
+import { DinoAddComponent } from './dino-add/dino-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DinolistComponent
+    DinolistComponent,
+    DinoAddComponent
   ],
   imports: [
     BrowserModule,
