@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DinolistComponent } from './dinolist/dinolist.component';
 import { MatTableModule } from '@angular/material/table';
 import { DinoAddComponent } from './dino-add/dino-add.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DinoAddComponent } from './dino-add/dino-add.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
