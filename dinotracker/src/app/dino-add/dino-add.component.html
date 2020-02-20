@@ -1,3 +1,18 @@
 <p>
   dino-add works!
 </p>
+<div>
+<input  type="text" ngModel/><label>Name</label><br />
+<!--<input  type="text" ngModel/><label>Species</label><br />-->
+    <mat-label>Species</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let dino of [{value: 'theri', viewValue: 'Therisaur'},{value: 'rex', viewValue: 'Rex'}]" [value]="dino.value">
+        {{dino.viewValue}}
+      </mat-option>
+  </mat-select>
+  <input  type="text" ngModel/><label>Level</label><br />
+  <input  type="text" ngModel/><label>Base HP</label><br />
+  <input  type="text" ngModel/><label>Base Melee</label><br />
+  <button mat-button color="primary">Clear fields</button>
+  <button mat-raised-button color="primary">Add Dino</button>
+</div>
