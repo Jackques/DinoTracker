@@ -2,17 +2,20 @@
   dino-add works!
 </p>
 <div>
-<input  type="text" ngModel/><label>Name</label><br />
-<!--<input  type="text" ngModel/><label>Species</label><br />-->
+  <form [formGroup]="newDino" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" /><label>Name</label><br />
+    <!--<input  type="text" ngModel/><label>Species</label><br />-->
     <mat-label>Species</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let dino of [{value: 'theri', viewValue: 'Therisaur'},{value: 'rex', viewValue: 'Rex'}]" [value]="dino.value">
+    <mat-select formControlName="species">
+      <mat-option *ngFor="let dino of [{value: 'theri', viewValue: 'Therisaur'},{value: 'rex', viewValue: 'Rex'}]"
+        [value]="dino.value">
         {{dino.viewValue}}
       </mat-option>
-  </mat-select>
-  <input  type="text" ngModel/><label>Level</label><br />
-  <input  type="text" ngModel/><label>Base HP</label><br />
-  <input  type="text" ngModel/><label>Base Melee</label><br />
-  <button mat-button color="primary">Clear fields</button>
-  <button mat-raised-button color="primary">Add Dino</button>
+    </mat-select>
+    <input type="text" formControlName="level" /><label>Level</label><br />
+    <input type="text" formControlName="base_hp" /><label>Base HP</label><br />
+    <input type="text" formControlName="base_melee" /><label>Base Melee</label><br />
+    <button mat-button color="primary">Clear fields</button>
+    <button mat-raised-button color="primary" [disabled]="!newDino.valid">Add Dino</button>
+  </form>
 </div>
