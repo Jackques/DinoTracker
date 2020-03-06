@@ -11,7 +11,8 @@ import {DinolistService} from "../dinolist.service";
 })
 export class DinoAddComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -24,9 +25,8 @@ export class DinoAddComponent implements OnInit {
     base_melee: new FormControl('', Validators.required),
   });
 
-  onSubmit(){
+  onSubmit() {
     console.dir(this.newDino);
-    DinolistService.();
-
-
+    // DinolistService.();
+  }
 }

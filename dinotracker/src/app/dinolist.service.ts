@@ -1,4 +1,9 @@
-import {Dino} from "./dinolist/dino.interface";
+import {Dino} from './dinolist/dino.interface';
+import {Injectable} from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
 
 export class DinolistService {
 
