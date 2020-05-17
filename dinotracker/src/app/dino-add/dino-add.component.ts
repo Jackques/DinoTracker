@@ -19,17 +19,25 @@ export class DinoAddComponent implements OnInit {
     level: new FormControl('', Validators.required),
     base_hp: new FormControl('', Validators.required),
     base_melee: new FormControl('', Validators.required),
+    note: new FormControl('') //todo: inplement this, might be very usefull
   });
 
-  dino: Dino;
+  dino: Dino = {
+    position: 0,
+    name: "",
+    species: 'rex',
+    base_level: 0,
+    base_melee: 0,
+    base_healthpoints: 0
+  };
 
   ngOnInit() {
     //todo: dino is undefined whilst being initiated above? Don't know why, please fix!
-    this.dino.name = "";
-    this.dino.species = "rex";
-    this.dino.base_level = 0;
-    this.dino.base_melee = 0;
-    this.dino.base_healthpoints = 0;
+    // this.dino.name = "";
+    // this.dino.species = "rex";
+    // this.dino.base_level = 0;
+    // this.dino.base_melee = 0;
+    // this.dino.base_healthpoints = 0;
   }
 
   onSubmit(){

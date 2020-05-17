@@ -24,4 +24,7 @@ export class DinolistService {
   addDinoToList(dino: Dino){
       this.dinoList.push(dino);
   }
+  incrementPositionNewDino(){
+    //todo: Inplement this method
+  }
 }
