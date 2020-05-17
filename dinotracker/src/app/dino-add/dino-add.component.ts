@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from "@angular/forms";
+import {FormGroup, Validators} from "@angular/forms";
 import { FormControl } from "@angular/forms";
 import { DinolistService } from "../dinolist/dinolist.service";
 import { Dino } from '../dinolist/dino.interface';
@@ -14,11 +14,11 @@ export class DinoAddComponent implements OnInit {
   constructor(private dinolistService: DinolistService) { }
 
   newDino = new FormGroup({
-    name: new FormControl(''),
-    species: new FormControl(''),
-    level: new FormControl(''),
-    base_hp: new FormControl(''),
-    base_melee: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    species: new FormControl('', Validators.required),
+    level: new FormControl('', Validators.required),
+    base_hp: new FormControl('', Validators.required),
+    base_melee: new FormControl('', Validators.required),
   });
 
   dino: Dino;
@@ -43,5 +43,4 @@ export class DinoAddComponent implements OnInit {
 
     this.dinolistService.addDinoToList(this.dino);
   }
-
 }
